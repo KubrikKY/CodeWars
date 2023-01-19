@@ -13,29 +13,28 @@
 function add(n){
     let sum;
     function f (b) {
-        console.log(f.valueOf);
         sum = n + b;
         console.log(sum);
         return f;
     }
-    f.valueOf = function() {
+    f.toString = function() {
         return sum;
     };
     return f;
 }
 
-console.log(add(1)(2)(3)(4)(5)); //6
+console.log(String(add(1)(2)(3)(4)(5))); //6
 
 
-function add(x){
-    let sum = x;
-    return function resultFn(y){
-        if(arguments.length){ //not relying on falsy value
-            sum += y;
-            return resultFn;
-        }
-        return sum;
-    };
-}
+// function add(x){
+//     let sum = x;
+//     return function resultFn(y){
+//         if(arguments.length){ //not relying on falsy value
+//             sum += y;
+//             return resultFn;
+//         }
+//         return sum;
+//     };
+// }
 
-console.log(add(1)(2)(3)(4)(5)); //6
+// console.log(add(1)(2)(3)(4)(5)); //6
