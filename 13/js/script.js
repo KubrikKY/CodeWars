@@ -14,4 +14,3 @@ function zeros (n) {
 }
 
 console.log(zeros(19));
-
