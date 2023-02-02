@@ -26,3 +26,10 @@ function toCamelCase(str){
 }
 
 console.log(toCamelCase('A-cat_was-Savage'));
+
+function digitalRoot(n) {
+     return String(n).length == 1 ? n : digitalRoot(String(n).split("")
+     .reduce((a, e) => +e + a, 0));
+}
+
+  console.log(digitalRoot(456));
