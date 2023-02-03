@@ -8,39 +8,31 @@
 
 // https://www.codewars.com/kata/52bc74d4ac05d0945d00054e/train/javascript
 
+
+
+
+
 function firstNonRepeatingLetter(s) {
     if (s.length == 1) {
         return s;
     }
     let result = [],
         toUpper = s.toUpperCase();
-    console.log(toUpper);
-
     
     for (let i = 0; i < s.length - 1; i++) {
         let j = i;
         if (!toUpper.includes(toUpper[i], j + 1)) {
             console.log(s[i]);
+
             result.push(s[i]);
         }
     }
-
+    console.log(result);
     return (result.length != s.length) ? result[0]: '';
   }
 
 
+console.log(firstNonRepeatingLetter('moonmen'));
 
-console.log(firstNonRepeatingLetter('sssssssss'));
 
 
-// function firstNonRepeatingLetter(s) {
-//     let arr = s.toUpperCase()
-//             .split('')
-//             .filter((letter, index, arr) => !arr.includes(letter, index + 1))[0];
-//     console.log(arr);
-//     return s[s.indexOf(arr[0])];
-   
-//     // return s.toUpperCase()
-//     //         .split('')
-//     //         .filter((letter, index, arr) => !arr.includes(letter, index + 1))[0] ? ;
-//   }
