@@ -1,29 +1,5 @@
-function likes(names) {
-    
-    let num = names.length;
-    
-    switch (num) {
-        case 0:
-            console.log('no one likes this');
-            break;
-         case 1:
-            console.log(`${names[0]} likes this`);
-         break;
-         
-         case 2:
-            console.log(`${names[0]} and ${names[1]} like this`);
-            break;
-         
-         case 3:
-            console.log(`${names[0]}, ${names[1]} and ${names[2]} like this`);
-            break;
-         default:
-            console.log(`${names[0]}, ${names[1]} and ${num - 2} others like this`);
-            break;
-    }
-    
-  }
-
-
-  let likeUser = ['Victror', 'Leha', 'hui'];
-  likes(likeUser);
+fetch(
+  'https://engine.hotellook.com/api/v2/cache.json?location=Moscow&currency=rub&checkIn=2023-04-10&checkOut=2023-04-15&limit=1'
+)
+  .then((responce) => responce.json())
+  .then((data) => console.log(data));
